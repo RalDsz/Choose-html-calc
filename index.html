@@ -23,7 +23,8 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input
+                  <input  
+                  type="number" name="quantity" min="0.11" max="9999999999999999999999999999999" step="any"
                     type="number"
                     class="form-control"
                     id="amount"
@@ -37,6 +38,7 @@
                     <span class="input-group-text">%</span>
                   </div>
                   <input
+                  type="number" name="quantity" min="0.1" max="999999999999999999999999999999999999999999" step="any"
                     type="number"
                     class="form-control"
                     id="interest"
@@ -46,6 +48,7 @@
               </div>
               <div class="form-group">
                 <input
+                type="number" name="quantity" min="0.1" max="9999999999999999999999999999999999999999999" step="any"
                   type="number"
                   id="years"
                   class="form-control"
@@ -62,7 +65,7 @@
             </form>
             <!-- Loader -->
             <div id="loading">
-              <img src="https://media.giphy.com/media/swhRkVYLJDrCE/giphy.gif" alt="loading"/>
+              <p>"Accesing our Lightspeed servers to do Complex Mathematics..."</p>
             </div>
             <!-- Result -->
             <div id="result">
