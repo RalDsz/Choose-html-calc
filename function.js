@@ -1,5 +1,22 @@
 // Code By Webdevtrick ( https://webdevtrick.com )
 // Listen for Submit
+window.onload = maxWindow;
+
+function maxWindow() {
+    window.moveTo(0, 0);
+
+    if (document.all) {
+        top.window.resizeTo(screen.availWidth, screen.availHeight);
+    }
+
+    else if (document.layers || document.getElementById) {
+        if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+            top.window.outerHeight = screen.availHeight;
+            top.window.outerWidth = screen.availWidth;
+        }
+    }
+}
+
 document.getElementById("loan-form").addEventListener("submit", function(e) {
   // Hide Results
   document.getElementById("result").style.display = "none";
@@ -38,42 +55,8 @@ function calculateResults() {
     // Show Results
     document.getElementById("result").style.display = "block";
 
-    // Hide Loader
-    document.getElementById("loading").style.display = "none";
-  } else {
-    showError("Please check number inputs");
-  }
-}
 
-// Show Error
-function showError(error) {
-  // Hide Results
-  document.getElementById("result").style.display = "none";
 
-  // Hide Loader
-  document.getElementById("loading").style.display = "none";
 
-  // Create a div
-  const errorDiv = document.createElement("div");
-
-  // Get Elements
-  const card = document.querySelector(".card");
-  const heading = document.querySelector(".heading");
-
-  // Add class
-  errorDiv.className = "alert alert-danger";
-
-  // Create text node and append div
-  errorDiv.appendChild(document.createTextNode(error));
-
-  // Insert error above heading
-  card.insertBefore(errorDiv, heading);
-
-  // Clear Error after 3 seconds
-  setTimeout(clearError, 3000);
-
-  // Clear Error
-  function clearError() {
-    document.querySelector(".alert").remove();
-  }
-}
+   
+}}
